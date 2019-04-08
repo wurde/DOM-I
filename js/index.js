@@ -49,7 +49,6 @@ let img_logo = document.getElementById('logo-img')
 let img_cta = document.getElementById('cta-img')
 let img_middle = document.getElementById('middle-img')
 
-
 /*
   Update image src paths
 */
