@@ -108,3 +108,21 @@ footer.textContent = siteContent["footer"]["copyright"]
 */
 
 nav_links.forEach(link => link.style.color = "green")
+
+/*
+  Append and prepend items to the navigation
+*/
+
+let nav = document.querySelector('header > nav')
+
+let prepended_link = document.createElement("a")
+prepended_link.textContent = "Prepend"
+prepended_link.setAttribute("href", "#")
+prepended_link.style.color = "green"
+nav.prepend(prepended_link)
+
+let appended_link = document.createElement("a")
+appended_link.textContent = "Append"
+appended_link.setAttribute("href", "#")
+appended_link.style.color = "green"
+nav.append(appended_link)
