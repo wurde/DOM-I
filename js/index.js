@@ -126,3 +126,15 @@ appended_link.textContent = "Append"
 appended_link.setAttribute("href", "#")
 appended_link.style.color = "green"
 nav.append(appended_link)
+
+/*
+  Stretch: update styles throughout the page.
+*/
+
+let random_colors = ["rgb(110, 47, 224)", "rgb(33, 121, 226)", "rgb(30, 177, 127)", "rgb(224, 139, 25)", "rgb(109, 35, 228)"]
+
+setInterval(function() {
+  let nav_links = document.querySelectorAll('header > nav a')
+  let index = Math.floor(Math.random() * 5)
+  nav_links.forEach(link => link.style.color = random_colors[index])
+}, 1000)
