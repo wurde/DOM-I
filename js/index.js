@@ -131,13 +131,22 @@ nav.append(appended_link)
   Stretch: update styles throughout the page.
 */
 
-let random_colors = ["rgb(110, 47, 224)", "rgb(33, 121, 226)", "rgb(30, 177, 127)", "rgb(224, 139, 25)", "rgb(212, 185, 30)"]
+let random_colors = ["#5600ab", "#0074ff", "#ff4f00", "green", "inherit"]
+
+function random_color_index() {
+  return Math.floor(Math.random() * 5)
+}
 
 setInterval(function() {
   let nav_links = document.querySelectorAll('header > nav a')
-  let index = Math.floor(Math.random() * 5)
-  nav_links.forEach(link => link.style.color = random_colors[index])
-}, 1000)
+
+  nav_links[0].style.color = random_colors[random_color_index()]
+  nav_links[1].style.color = random_colors[random_color_index()]
+  nav_links[2].style.color = random_colors[random_color_index()]
+  nav_links[3].style.color = random_colors[random_color_index()]
+  nav_links[4].style.color = random_colors[random_color_index()]
+  nav_links[5].style.color = random_colors[random_color_index()]
+}, 1200)
 
 /*
   Stretch: add event listener to button
