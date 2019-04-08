@@ -34,7 +34,7 @@ You have been provided a [JSON object](js/index.js) with all the necessary data 
 
 * [x] Remember, NO direct updating of the HTML source is allowed.
 * [x] Remember to update the src attributes on images
-* [ ] Using your selectors, update the content to match the example file.
+* [x] Using your selectors, update the content to match the example file.
 
 ## Task 3: Add new content
 
