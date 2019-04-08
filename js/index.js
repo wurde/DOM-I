@@ -44,9 +44,9 @@ const siteContent = {
 let img_logo = document.getElementById('logo-img')
 img_logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let links = document.querySelectorAll('header > nav a')
-links = Array.from(links)
-links.forEach((link, i) => link.textContent = siteContent["nav"][`nav-item-${i+1}`])
+let nav_links = document.querySelectorAll('header > nav a')
+nav_links = Array.from(nav_links)
+nav_links.forEach((link, i) => link.textContent = siteContent["nav"][`nav-item-${i+1}`])
 
 /*
   Select and update cta elements.
@@ -102,3 +102,9 @@ contact.children[3].textContent = siteContent["contact"]["email"]
 
 let footer = document.querySelector('footer p')
 footer.textContent = siteContent["footer"]["copyright"]
+
+/*
+  Change navigation text to green
+*/
+
+nav_links.forEach(link => link.style.color = "green")
