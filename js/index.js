@@ -131,10 +131,18 @@ nav.append(appended_link)
   Stretch: update styles throughout the page.
 */
 
-let random_colors = ["rgb(110, 47, 224)", "rgb(33, 121, 226)", "rgb(30, 177, 127)", "rgb(224, 139, 25)", "rgb(109, 35, 228)"]
+let random_colors = ["rgb(110, 47, 224)", "rgb(33, 121, 226)", "rgb(30, 177, 127)", "rgb(224, 139, 25)", "rgb(212, 185, 30)"]
 
 setInterval(function() {
   let nav_links = document.querySelectorAll('header > nav a')
   let index = Math.floor(Math.random() * 5)
   nav_links.forEach(link => link.style.color = random_colors[index])
 }, 1000)
+
+/*
+  Stretch: add event listener to button
+*/
+
+cta_button.addEventListener('click', function() {
+  h1.textContent = "Thanks for the click!"
+})
