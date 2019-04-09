@@ -37,6 +37,121 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+/*
+  Select and update nav elements.
+*/
+
+let img_logo = document.getElementById('logo-img')
+img_logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let nav_links = document.querySelectorAll('header > nav a')
+nav_links = Array.from(nav_links)
+nav_links.forEach((link, i) => link.textContent = siteContent["nav"][`nav-item-${i+1}`])
+
+/*
+  Select and update cta elements.
+*/
+
+let h1 = document.querySelector('h1')
+h1.textContent = siteContent["cta"]["h1"]
+
+let cta_button = document.querySelector('section.cta .cta-text button')
+cta_button.textContent = siteContent["cta"]["button"]
+
+let img_cta = document.getElementById('cta-img')
+img_cta.setAttribute('src', 'img/header-img.png')
+
+/*
+  Select and update main-content elements.
+*/
+
+let top_content_h4 = document.querySelectorAll('section.main-content .top-content h4')
+top_content_h4[0].textContent = siteContent["main-content"]["features-h4"]
+top_content_h4[1].textContent = siteContent["main-content"]["about-h4"]
+
+let top_content_p = document.querySelectorAll('section.main-content .top-content p')
+top_content_p[0].textContent = siteContent["main-content"]["features-content"]
+top_content_p[1].textContent = siteContent["main-content"]["about-content"]
+
+let img_middle = document.getElementById('middle-img')
+img_middle.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+let bottom_content_h4 = document.querySelectorAll('section.main-content .bottom-content h4')
+bottom_content_h4[0].textContent = siteContent["main-content"]["services-h4"]
+bottom_content_h4[1].textContent = siteContent["main-content"]["product-h4"]
+bottom_content_h4[2].textContent = siteContent["main-content"]["vision-h4"]
+
+let bottom_content_p = document.querySelectorAll('section.main-content .bottom-content p')
+bottom_content_p[0].textContent = siteContent["main-content"]["services-content"]
+bottom_content_p[1].textContent = siteContent["main-content"]["product-content"]
+bottom_content_p[2].textContent = siteContent["main-content"]["vision-content"]
+
+/*
+  Select and update contact elements.
+*/
+
+let contact = document.querySelector('section.contact')
+contact.children[0].textContent = siteContent["contact"]["contact-h4"]
+contact.children[1].textContent = siteContent["contact"]["address"]
+contact.children[2].textContent = siteContent["contact"]["phone"]
+contact.children[3].textContent = siteContent["contact"]["email"]
+
+/*
+  Select and update footer elements.
+*/
+
+let footer = document.querySelector('footer p')
+footer.textContent = siteContent["footer"]["copyright"]
+
+/*
+  Change navigation text to green
+*/
+
+nav_links.forEach(link => link.style.color = "green")
+
+/*
+  Append and prepend items to the navigation
+*/
+
+let nav = document.querySelector('header > nav')
+
+let prepended_link = document.createElement("a")
+prepended_link.textContent = "Prepend"
+prepended_link.setAttribute("href", "#")
+prepended_link.style.color = "green"
+nav.prepend(prepended_link)
+
+let appended_link = document.createElement("a")
+appended_link.textContent = "Append"
+appended_link.setAttribute("href", "#")
+appended_link.style.color = "green"
+nav.append(appended_link)
+
+/*
+  Stretch: update styles throughout the page.
+*/
+
+let random_colors = ["#5600ab", "#0074ff", "#ff4f00", "green", "inherit"]
+
+function random_color_index() {
+  return Math.floor(Math.random() * 5)
+}
+
+setInterval(function() {
+  let nav_links = document.querySelectorAll('header > nav a')
+
+  nav_links[0].style.color = random_colors[random_color_index()]
+  nav_links[1].style.color = random_colors[random_color_index()]
+  nav_links[2].style.color = random_colors[random_color_index()]
+  nav_links[3].style.color = random_colors[random_color_index()]
+  nav_links[4].style.color = random_colors[random_color_index()]
+  nav_links[5].style.color = random_colors[random_color_index()]
+}, 1200)
+
+/*
+  Stretch: add event listener to button
+*/
+
+cta_button.addEventListener('click', function() {
+  h1.textContent = "Thanks for the click!"
+})
